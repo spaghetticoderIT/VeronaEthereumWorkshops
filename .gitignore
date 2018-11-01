@@ -1,0 +1,7 @@
+# Contract node_modules/
+
+SmartContract/node_modules
+
+# DS_STORE
+
+.DS_STORE
