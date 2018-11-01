@@ -1,8 +1,8 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.24;
 
-import './VeronaCoin.sol';
-import 'openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol';
-import 'openzeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol';
+import "./VeronaCoin.sol";
+import "../node_modules/openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol";
+import "../node_modules/openzeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol";
 
 
 contract VeronaCoinCrowdsale is TimedCrowdsale, MintedCrowdsale {
@@ -16,7 +16,5 @@ contract VeronaCoinCrowdsale is TimedCrowdsale, MintedCrowdsale {
         )
         public
         Crowdsale(_rate, _wallet, _token)
-        TimedCrowdsale(_openingTime, _closingTime) {
-
-        }
+        TimedCrowdsale(_openingTime, _closingTime) {}
 }

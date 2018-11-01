@@ -4,6 +4,12 @@ SmartContract/node_modules
 
 node_modules/
 
+# Contract builds
+
+SmartContract/build
+
 # DS_STORE
 
 .DS_STORE
+
+

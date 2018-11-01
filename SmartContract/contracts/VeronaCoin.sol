@@ -1,6 +1,6 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.24;
 
-import 'openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol';
+import "../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol";
 
 contract VeronaCoin is ERC20Mintable {
     string public name = "Verona Coin";

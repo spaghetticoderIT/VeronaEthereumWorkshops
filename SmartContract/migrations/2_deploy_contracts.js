@@ -1,5 +1,5 @@
-const VeronaCoin = require("../contracts/VeronaCoin.sol");
-const VeronaCoinCrowdsale = require("../contracts/VeronaCoinCrowdsale.sol");
+const VeronaCoin = artifacts.require("./VeronaCoin.sol");
+const VeronaCoinCrowdsale = artifacts.require("./VeronaCoinCrowdsale.sol");
 
 module.exports = function(deployer, network, accounts) {
   const openingTime = web3.eth.getBlock("latest").timestamp + 2; // two secs in the future
