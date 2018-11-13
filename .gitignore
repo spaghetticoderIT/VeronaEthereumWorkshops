@@ -4,6 +4,8 @@ SmartContract/node_modules
 
 */node_modules/
 
+SmartContract/ERC20/node_modules
+
 # Contract builds
 
 SmartContract/build
