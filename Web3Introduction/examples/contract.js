@@ -1,4 +1,4 @@
-// Split payment contract usage
+// Hello world contract usage
 const Web3 = require("web3");
 const web3 = new Web3();
 web3.setProvider(new web3.providers.HttpProvider("http://localhost:7545"));
