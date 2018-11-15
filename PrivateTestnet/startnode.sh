@@ -1,0 +1,1 @@
+geth --networkid 38385 --mine --minerthreads 1 --datadir "." --nodiscover --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*" --nat "any" --rpcapi "eth,web3,personal,net,shh,db" --unlock 0 --password ./password.sec --ipcpath "./geth.ipc" --shh --rpcaddr 0.0.0.0

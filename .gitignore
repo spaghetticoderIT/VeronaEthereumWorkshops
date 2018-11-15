@@ -14,4 +14,17 @@ SmartContract/build
 
 .DS_STORE
 
+# Private chain data
+
+PrivateTestnet/test
+PrivateTestnet/geth
+PrivateTestnet/accounts.json
+PrivateTestnet/keystore
+PrivateTestnet/password.sec
+
+
+
+
+
+
 
