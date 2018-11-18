@@ -3,9 +3,9 @@ const web3 = new Web3();
 
 web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
-async function getKeyPair() {
-  const keyPair = await web3.shh.newKeyPair();
-  return keyPair;
+async function getKeys() {
+  const symKeyID = await web3.shh.newKeyPair();
+  return { symKeyID };
 }
 
 async function postMessage(recipientPublicKey, topic, message) {
@@ -29,10 +29,10 @@ async function receiveMessage(keyPair) {
 }
 
 async function main() {
-  const keyPair = await getKeyPair();
-  const publicKey = await web3.shh.getPublicKey(keyPair);
+  const keys = await getKeys();
+  const publicKey = await web3.shh.getPublicKey(keys.symKeyID);
   await postMessage(publicKey, "0x07678231", "Hello World").then(console.log);
-  await receiveMessage(keyPair).then(console.log);
+  await receiveMessage(keys.symKeyID).then(console.log);
 }
 
 main();
