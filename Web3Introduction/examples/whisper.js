@@ -23,9 +23,10 @@ async function postMessage(recipientPubKey, sig, topic, message) {
   return messageHash;
 }
 
-async function receiveMessage(keyPair) {
+async function receiveMessage(keyPair, topics) {
   const filter = await web3.shh.newMessageFilter({
-    privateKeyID: keyPair
+    privateKeyID: keyPair,
+    topics: topics
   });
   let messages = await web3.shh.getFilterMessages(filter);
   return messages;
@@ -33,10 +34,17 @@ async function receiveMessage(keyPair) {
 
 async function main() {
   const keys = await getKeys();
-  await postMessage(keys.pubKey, keys.sig, "0x07678231", "Hello World").then(
+  const topics = ["0x07678231"];
+  const delay = ms => {
+    return new Promise(resolve => {
+      setTimeout(resolve, ms);
+    });
+  };
+  await postMessage(keys.pubKey, keys.sig, topics[0], "Hello World").then(
     console.log
   );
-  await receiveMessage(keys.privateKeyID).then(console.log);
+  await delay(5000);
+  await receiveMessage(keys.privateKeyID, topics).then(console.log);
 }
 
 main();

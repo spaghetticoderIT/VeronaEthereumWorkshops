@@ -42,14 +42,20 @@
   "ast": {
     "absolutePath": "/Users/marcello/Projects/VeronaEthereumWorkshops/SmartContract/Arrays/contracts/ArraysExample.sol",
     "exportedSymbols": {
-      "ArraysExample": [56]
+      "ArraysExample": [
+        56
+      ]
     },
     "id": 57,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": ["solidity", "0.4", ".24"],
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:23:0"
       },
@@ -60,7 +66,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 56,
-        "linearizedBaseContracts": [56],
+        "linearizedBaseContracts": [
+          56
+        ],
         "name": "ArraysExample",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -176,7 +184,9 @@
               "src": "181:165:0",
               "statements": [
                 {
-                  "assignments": [17],
+                  "assignments": [
+                    17
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -240,7 +250,9 @@
                   "src": "191:26:0"
                 },
                 {
-                  "assignments": [22],
+                  "assignments": [
+                    22
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -783,14 +795,20 @@
   "legacyAST": {
     "absolutePath": "/Users/marcello/Projects/VeronaEthereumWorkshops/SmartContract/Arrays/contracts/ArraysExample.sol",
     "exportedSymbols": {
-      "ArraysExample": [56]
+      "ArraysExample": [
+        56
+      ]
     },
     "id": 57,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": ["solidity", "0.4", ".24"],
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:23:0"
       },
@@ -801,7 +819,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 56,
-        "linearizedBaseContracts": [56],
+        "linearizedBaseContracts": [
+          56
+        ],
         "name": "ArraysExample",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -917,7 +937,9 @@
               "src": "181:165:0",
               "statements": [
                 {
-                  "assignments": [17],
+                  "assignments": [
+                    17
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -981,7 +1003,9 @@
                   "src": "191:26:0"
                 },
                 {
-                  "assignments": [22],
+                  "assignments": [
+                    22
+                  ],
                   "declarations": [
                     {
                       "constant": false,
