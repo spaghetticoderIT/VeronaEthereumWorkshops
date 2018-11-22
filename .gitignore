@@ -22,6 +22,9 @@ PrivateTestnet/accounts.json
 PrivateTestnet/keystore
 PrivateTestnet/password.sec
 
+# Infura API key
+
+Web3Introduction/examples/infura.json
 
 
 

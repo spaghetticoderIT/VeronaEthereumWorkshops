@@ -4,20 +4,19 @@ const web3 = new Web3();
 web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 
 async function getKeys() {
-  const sig = await web3.shh.newKeyPair();
-  const privateKeyID = sig;
-  const pubKey = await web3.shh.getPublicKey(privateKeyID);
-  return { sig, privateKeyID, pubKey };
+  const keyPair = await web3.shh.newKeyPair();
+  const privKey = await web3.shh.getPrivateKey(keyPair);
+  const pubKey = await web3.shh.getPublicKey(keyPair);
+  return { keyPair, privKey, pubKey };
 }
 
-async function postMessage(recipientPubKey, sig, topic, message) {
+async function postMessage(recipientPubKey, topic, message) {
   const messageHash = await web3.shh.post({
     pubKey: recipientPubKey,
-    sig: sig,
-    ttl: 15,
+    ttl: 50,
     topic: topic,
-    powTarget: 0.5,
-    powTime: 3,
+    powTarget: 0.2,
+    powTime: 50,
     payload: web3.utils.fromAscii(message)
   });
   return messageHash;
@@ -25,7 +24,7 @@ async function postMessage(recipientPubKey, sig, topic, message) {
 
 async function receiveMessage(keyPair, topics) {
   const filter = await web3.shh.newMessageFilter({
-    privateKeyID: keyPair,
+    privateKeyId: keyPair,
     topics: topics
   });
   let messages = await web3.shh.getFilterMessages(filter);
@@ -35,16 +34,8 @@ async function receiveMessage(keyPair, topics) {
 async function main() {
   const keys = await getKeys();
   const topics = ["0x07678231"];
-  const delay = ms => {
-    return new Promise(resolve => {
-      setTimeout(resolve, ms);
-    });
-  };
-  await postMessage(keys.pubKey, keys.sig, topics[0], "Hello World").then(
-    console.log
-  );
-  await delay(5000);
-  await receiveMessage(keys.privateKeyID, topics).then(console.log);
+  await postMessage(keys.pubKey, topics[0], "Hello World").then(console.log);
+  await receiveMessage(keys.keyPair, topics).then(console.log);
 }
 
 main();
